@@ -18,11 +18,7 @@ function Header() {
       </div>
       <div className="flex gap-8">
         {linkList.map((linkItem, index) => (
-          <NavLink
-            key={index}
-            to={linkItem.link}
-            className="hover:underline hover:scale-105 transition-transform duration-300"
-          >
+          <NavLink key={index} to={linkItem.link} className="hover:underline">
             {linkItem.title}
           </NavLink>
         ))}

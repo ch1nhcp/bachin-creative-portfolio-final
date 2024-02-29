@@ -15,8 +15,8 @@ function Footer() {
             <div className="text-2xl">Tel: 0949-626-193</div>
             <div className="text-2xl">Email: bachin.creative@gmail.com</div>
             <div className="text-2xl">
-              Address: 215 Nguyen Gia Tri street-25 ward - Binh Thanh district -
-              HCM city
+              Address: 215 Nguyen Gia Tri street - 25 ward - Binh Thanh district
+              - HCM city
             </div>
           </div>
         </div>

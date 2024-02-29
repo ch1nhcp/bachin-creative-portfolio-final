@@ -10,7 +10,7 @@ function Header() {
   ];
 
   return (
-    <div className="px-20 py-10 flex items-center justify-between border-b border-black">
+    <div className="px-20 py-10 flex items-center justify-between border-b border-black transition-all duration-500 transform">
       <div className="w-60">
         <i className="text-2xl font-semibold font-sans-custom">
           Bachin Creative

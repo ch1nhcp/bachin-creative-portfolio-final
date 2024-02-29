@@ -8,7 +8,7 @@ function ImgGallery() {
     { title: "", url: "https://i.imgur.com/GrPAoWN.jpeg" },
   ];
   return (
-    <div className="px-20 py-10 text-center mx-auto border-b border-black">
+    <div className="p-20 text-center mx-auto border-b border-black">
       <div className="text-4xl font-sans-custom">
         <span>The </span>
         <i>Gallery </i>

@@ -18,8 +18,8 @@ function PortfolioSection() {
   return (
     <div className="p-20 text-center border-b border-black">
       <div className="text-3xl font-sans-custom">
-        View our
-        <i> portfolio</i>
+        View Our
+        <i> Portfolio</i>
       </div>
       <div className="text-xl pb-8 font-medium">
         Check out our latest projects and results in our amazing client

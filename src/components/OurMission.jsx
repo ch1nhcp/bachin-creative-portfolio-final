@@ -6,7 +6,7 @@ function OurMission() {
     <div className="p-20 text-center border-b border-black">
       <p className="text-3xl font-sans-custom">
         Our
-        <i> mission</i>
+        <i> Mission</i>
       </p>
       <p className="pb-6 font-medium mx-auto max-w-xl">
         "With our dedication to excellence and our drive for innovation, we aim

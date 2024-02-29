@@ -1,12 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Footer() {
+  const navigate = useNavigate();
+  const handleClickLogo = (event) => {
+    event.preventDefault();
+    navigate("/");
+  };
   return (
     <>
       <div className="px-20 py-10 text-center mx-auto border-b border-black">
         <div className="flex items-center justify-between">
-          <div className="w-60">
+          <div className="w-60 cursor-pointer" onClick={handleClickLogo}>
             <img
+              className="cursor-pointer"
               src="https://lh3.google.com/u/0/d/1yecYnbygSK0KXLO714n2MGama5ecHQMH=w3024-h1646-iv1"
               alt="logo-img"
             />

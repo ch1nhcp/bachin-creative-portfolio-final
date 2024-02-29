@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Header() {
   const linkList = [
@@ -9,10 +9,17 @@ function Header() {
     { title: "Contact", link: "/contact" },
   ];
 
+  const navigate = useNavigate();
+
+  const handleClickLogo = (event) => {
+    event.preventDefault();
+    navigate("/");
+  };
+
   return (
     <div className="px-20 py-10 flex items-center justify-between border-b border-black transition-all duration-500 transform">
-      <div className="w-60">
-        <i className="text-2xl font-semibold font-sans-custom">
+      <div className="w-60 cursor-pointer" onClick={handleClickLogo}>
+        <i className="text-2xl cursor-pointer font-semibold font-sans-custom">
           Bachin Creative
         </i>
       </div>

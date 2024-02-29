@@ -7,7 +7,7 @@ function Hero() {
 
   const handleClickBack = (event) => {
     event.preventDefault();
-    navigate("/");
+    navigate("/portfolio");
   };
   return (
     <div className="border-b border-black">

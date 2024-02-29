@@ -1,7 +1,15 @@
 import React from "react";
 import StyledBtn from "./StyledBtn";
+import { useNavigate } from "react-router-dom";
 
 function OurMission() {
+  const navigate = useNavigate();
+
+  const handleClickAbout = (event) => {
+    event.preventDefault();
+    navigate("/about");
+  };
+
   return (
     <div className="p-20 text-center border-b border-black">
       <p className="text-3xl font-sans-custom">
@@ -13,7 +21,7 @@ function OurMission() {
         to uplift brands and redefine the narrative landscape."
       </p>
       <div className="mx-auto max-w-xs">
-        <StyledBtn>View more about us</StyledBtn>
+        <StyledBtn onClick={handleClickAbout}>View more about us</StyledBtn>
       </div>
     </div>
   );

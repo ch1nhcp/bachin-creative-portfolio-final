@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function Hero() {
   const navigate = useNavigate();
 
-  const handleClickBack = (event) => {
+  const handleClickPortfolio = (event) => {
     event.preventDefault();
     navigate("/portfolio");
   };
@@ -29,7 +29,7 @@ function Hero() {
             Join us where strategy intersects with creativity, creating
             unforgettable brand experiences.
           </div>
-          <StyledBtn onClick={handleClickBack}>View more</StyledBtn>
+          <StyledBtn onClick={handleClickPortfolio}>View more</StyledBtn>
         </div>
       </div>
       <div className="py-20 text-center text-cafe text-3xl font-sans-custom">

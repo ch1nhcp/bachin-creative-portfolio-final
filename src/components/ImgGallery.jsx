@@ -3,9 +3,9 @@ import React from "react";
 function ImgGallery() {
   const imgLinks = [
     { title: "", url: "https://i.imgur.com/9OQBLNA.png" },
-    { title: "", url: "https://i.imgur.com/9OQBLNA.png" },
-    { title: "", url: "https://i.imgur.com/9OQBLNA.png" },
-    { title: "", url: "https://i.imgur.com/9OQBLNA.png" },
+    { title: "", url: "https://i.imgur.com/0montJ7.png" },
+    { title: "", url: "https://i.imgur.com/8U7XI1H.png" },
+    { title: "", url: "https://i.imgur.com/GrPAoWN.jpeg" },
   ];
   return (
     <div className="px-20 py-10 text-center mx-auto border-b border-black">

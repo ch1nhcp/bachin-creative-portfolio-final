@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "sans-custom": ["Bacasime Antique", "sans-serif"],
+        "sans-custom": ["Georgia Pro Cond", "sans-serif"],
       },
     },
   },

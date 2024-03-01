@@ -13,10 +13,20 @@ const SplitLines = ({ lines }) => (
   </>
 );
 
+// vuvuzela
+const targetAudience =
+  "Main age group: 26-45 (80% from Hanoi)\nMale, high income, enjoys luxury, successful\n Income level B+, A";
+const socialMediaKPIs =
+  "Increased EngagementIncreased Accounts Reached/Impressions/Video ViewsIncreased\nFollowing Count More bookings (tracked via booking system) \nInventive activity series 'Vuvuzela - Vuivuijluly'";
+
 function BlogLayout({ title, place, slogan, goals, solutions, results, img }) {
   const splitGoals = useMemo(() => goals.split("\n"), [goals]);
   const splitSolutions = useMemo(() => solutions.split("\n"), [solutions]);
   const splitResults = useMemo(() => results.split("\n"), [results]);
+
+  // vuvuzela
+  const splitTargetAudience = useMemo(() => targetAudience.split("\n"), []);
+  const splitSocialMediaKPIs = useMemo(() => socialMediaKPIs.split("\n"), []);
 
   return (
     <>
@@ -50,6 +60,21 @@ function BlogLayout({ title, place, slogan, goals, solutions, results, img }) {
             <div className="uppercase font-medium">The Results</div>
             <SplitLines lines={splitResults} />
           </div>
+        )}
+
+        {/* Vuvuzela */}
+        {title === "Vuvuzela - High-End Beer Restaurant" && (
+          <>
+            <div className="text-xl py-8">
+              <div className="uppercase font-medium">TARGET AUDIENCE </div>
+              <SplitLines lines={splitTargetAudience} />
+            </div>
+
+            <div className="text-xl py-8">
+              <div className="uppercase font-medium">SOCIAL MEDIA KPI'S</div>
+              <SplitLines lines={splitSocialMediaKPIs} />
+            </div>
+          </>
         )}
 
         {img.length > 0 && <hr className="border-black" />}

@@ -2,6 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
+
   const navigate = useNavigate();
   const handleClickLogo = (event) => {
     event.preventDefault();
@@ -28,8 +30,9 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="p-4 text-center mx-auto border-b border-black"></div>
-      <div className="p-6"></div>
+      <div className="p-4 text-center mx-auto border-b border-black">
+        @bybachincreative-{currentYear}
+      </div>
     </>
   );
 }

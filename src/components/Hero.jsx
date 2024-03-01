@@ -11,7 +11,7 @@ function Hero() {
   };
   return (
     <div className="border-b border-black">
-      <div className="flex items-center">
+      <div className="flex items-center border-b border-black">
         <div className="w-1/2">
           <img src="https://i.imgur.com/rGaxuu7.jpeg" alt="hero-img" />
         </div>

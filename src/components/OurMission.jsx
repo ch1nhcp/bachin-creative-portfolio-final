@@ -12,7 +12,7 @@ function OurMission() {
 
   return (
     <div className="p-20 text-center border-b border-black">
-      <p className="text-3xl font-sans-custom">
+      <p className="text-4xl font-sans-custom">
         Our
         <i> Mission</i>
       </p>

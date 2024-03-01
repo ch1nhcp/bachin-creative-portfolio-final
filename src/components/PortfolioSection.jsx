@@ -17,7 +17,7 @@ function PortfolioSection() {
   ];
   return (
     <div className="p-20 text-center border-b border-black">
-      <div className="text-3xl font-sans-custom">
+      <div className="text-4xl font-sans-custom">
         View Our
         <i> Portfolio</i>
       </div>

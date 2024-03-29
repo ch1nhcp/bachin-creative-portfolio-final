@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function ImgGallery() {
-  const imgLinks = [
-    { title: "", url: "https://i.imgur.com/9OQBLNA.png" },
-    { title: "", url: "https://i.imgur.com/0montJ7.png" },
-    { title: "", url: "https://i.imgur.com/8U7XI1H.png" },
-    { title: "", url: "https://i.imgur.com/GrPAoWN.jpeg" },
-  ];
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    // Dynamically import the images
+    const importImages = async () => {
+      const imageImports = await Promise.all([
+        import("../assets/img/gallery/gallery-1.png"),
+        import("../assets/img/gallery/gallery-2.png"),
+        import("../assets/img/gallery/gallery-3.png"),
+        import("../assets/img/gallery/gallery-4.png"),
+      ]);
+
+      const imageUrls = imageImports.map((module) => module.default);
+      setImages(imageUrls);
+    };
+
+    importImages();
+  }, []);
+
   return (
     <div className="p-20 text-center mx-auto border-b border-black">
       <div className="text-4xl font-sans-custom">
@@ -16,9 +29,9 @@ function ImgGallery() {
       </div>
       {/* Image wrapper */}
       <div className="pt-10 flex gap-1">
-        {imgLinks.map((img, index) => (
+        {images.map((imageUrl, index) => (
           <div className="w-1/4" key={index}>
-            <img src={img.url} alt={img.title} />
+            <img src={imageUrl} alt={`${index + 1}`} />
           </div>
         ))}
       </div>

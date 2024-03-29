@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import StyledBtn from "./StyledBtn";
 
 function AboutLearnMore() {
+  const [imageUrl, setImageUrl] = useState(null);
+
+  useEffect(() => {
+    // Dynamically import the image
+    const importImage = async () => {
+      try {
+        const module = await import("../assets/img/aboutMe/aboutme-2.png");
+        setImageUrl(module.default);
+      } catch (error) {
+        console.error("Error loading image:", error);
+      }
+    };
+
+    importImage();
+  }, []);
+
   return (
     <div className="flex flex-col sm:flex-row border-b border-black">
       <div className="p-6 sm:w-3/5 md:p-20 flex flex-col justify-center">
@@ -22,11 +38,13 @@ function AboutLearnMore() {
           </StyledBtn>
         </div>
       </div>
-      <img
-        className="w-full sm:w-2/5"
-        src="https://i.imgur.com/scCrHw3.jpg"
-        alt=""
-      />
+      {imageUrl && (
+        <img
+          className="w-full sm:w-2/5"
+          src={imageUrl}
+          alt="Learn More About Our Experience"
+        />
+      )}
     </div>
   );
 }

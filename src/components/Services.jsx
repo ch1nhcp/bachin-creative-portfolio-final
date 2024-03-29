@@ -1,22 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Services() {
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    const importImages = async () => {
+      const imageImports = await Promise.all([
+        import("../assets/img/services/services-01.png"),
+        import("../assets/img/services/services-02.png"),
+        import("../assets/img/services/services-03.png"),
+      ]);
+
+      const imageUrls = imageImports.map((module) => module.default);
+      setImages(imageUrls);
+    };
+
+    importImages();
+  }, []);
+
   const serviceLinks = [
     {
       title: "Services",
       link: "/services",
-      bgImgSrc: "https://i.imgur.com/Ir0grvZ.jpeg",
     },
     {
       title: "Portfolio",
       link: "/portfolio",
-      bgImgSrc: "https://i.imgur.com/GcXkv0s.jpeg",
     },
     {
       title: "Contact",
       link: "/contact",
-      bgImgSrc: "https://i.imgur.com/5qvP6EX.jpeg",
     },
   ];
 
@@ -28,7 +42,7 @@ function Services() {
           to={service.link}
           className="relative hover:scale-105 transition-transform duration-300"
         >
-          <img src={service.bgImgSrc} alt={service.title} />
+          <img src={images[index]} alt={service.title} />
           <div className="absolute inset-12 flex items-end justify-center text-white text-4xl font-sans-custom">
             <i>{service.title}</i>
           </div>

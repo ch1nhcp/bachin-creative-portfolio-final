@@ -1,50 +1,74 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function PortfolioGallery() {
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    // Dynamically import the images
+    const importImages = async () => {
+      const imageImports = await Promise.all([
+        import("../assets/img/portfolioGallery/portfolio-20.png"),
+        import("../assets/img/portfolioGallery/portfolio-21.png"),
+        import("../assets/img/portfolioGallery/portfolio-22.png"),
+        import("../assets/img/portfolioGallery/portfolio-23.png"),
+        import("../assets/img/portfolioGallery/portfolio-24.png"),
+        import("../assets/img/portfolioGallery/portfolio-25.png"),
+        import("../assets/img/portfolioGallery/portfolio-26.png"),
+        import("../assets/img/portfolioGallery/portfolio-27.png"),
+        import("../assets/img/portfolioGallery/portfolio-28.png"),
+      ]);
+
+      const imageUrls = imageImports.map((module) => module.default);
+      setImages(imageUrls);
+    };
+
+    importImages();
+  }, []);
+
   const imagesWithDescriptions = [
     {
-      src: "https://i.imgur.com/PYVhStp.png",
+      src: images[0],
       description: "HaoChi Dimsum Taipei - Hanoi",
       url: "/haochi",
     },
     {
-      src: "https://i.imgur.com/hnkkLDw.png",
+      src: images[1],
       description: "Aman Cafe - Halong, Quangninh",
       url: "/aman",
     },
     {
-      src: "https://i.imgur.com/Pw5HCu6.png",
+      src: images[2],
       description: "Yongkang Hotpot & Dimsum Taipei - Hanoi",
       url: "/yongkang",
     },
     {
-      src: "https://i.imgur.com/tSMzklP.png",
+      src: images[3],
       description: "The Almin Hotel - Halong, Quangninh",
       url: "/the-almin-hotel",
     },
     {
-      src: "https://i.imgur.com/771VziN.png",
+      src: images[4],
       description: "Gu coffee - Halong, Quangninh",
       url: "/gu-coffee",
     },
     {
-      src: "https://i.imgur.com/yupu9Rn.png",
+      src: images[5],
       description: "Mellenim coffee - Hanoi",
       url: "/mellenim-coffee",
     },
     {
-      src: "https://i.imgur.com/KMTvI6H.png",
+      src: images[6],
       description: "1988 Coffee & bar - Halong, Quangninh",
       url: "/1998-coffee-and-bar",
     },
     {
-      src: "https://i.imgur.com/D3ttHJi.png",
+      src: images[7],
       description: "Kopee Coffee - Hanoi",
       url: "/kopee-coffee",
     },
     {
-      src: "https://i.imgur.com/mQTJncT.png",
+      src: images[8],
       description: "Vuvuzela - Golden Gate, Hanoi",
       url: "/vuvuzela",
     },
@@ -61,9 +85,9 @@ function PortfolioGallery() {
           <img
             className="object-cover w-full h-full"
             src={image.src}
-            alt={{ index }}
+            alt={image.description}
           />
-          <div className=" text-center p-2">
+          <div className="text-center p-2">
             <p className="text-sm md:text-base font-semibold">
               {image.description}
             </p>

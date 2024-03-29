@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function AboutMe() {
+  const [imageUrl, setImageUrl] = useState(null);
+
+  useEffect(() => {
+    // Dynamically import the image
+    const importImage = async () => {
+      try {
+        const module = await import("../assets/img/aboutMe/aboutme-1.png");
+        setImageUrl(module.default);
+      } catch (error) {
+        console.error("Error loading image:", error);
+      }
+    };
+
+    importImage();
+  }, []);
+
   return (
     <div className="flex flex-col md:flex-row border-b border-white">
-      <img
-        className="w-full md:w-2/5"
-        src="https://i.imgur.com/aVIiO7p.jpeg"
-        alt=""
-      />
+      {imageUrl && (
+        <img className="w-full md:w-2/5" src={imageUrl} alt="About Me" />
+      )}
       <div className="p-20 flex flex-col justify-center">
         <div className="text-4xl font-sans-custom">
           Hi, i'm <i>Thanh Thuy</i>
